@@ -22,6 +22,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSLog(@"Application Did Finish Launching");
     CGRect viewRect = [[UIScreen mainScreen] bounds];
     NSLog(@"Screen is %f tall and %f width", viewRect.size.height, viewRect.size.width);
+    self.window = [[UIWindow alloc] initWithFrame:viewRect];
     return YES;
 }
 
