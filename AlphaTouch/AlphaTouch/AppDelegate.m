@@ -19,6 +19,10 @@
 - (BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSLog(@"Application Did Finish Launching");
+    UIScreen *screen = [UIScreen mainScreen];
+    CGRect viewRect = [screen bounds];
+    NSLog(@"Screen is %f tall and %f width", viewRect.size.height, viewRect.size.width);
     return YES;
 }
 
