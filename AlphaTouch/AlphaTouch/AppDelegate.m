@@ -20,9 +20,26 @@
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSLog(@"Application Did Finish Launching");
+    
     CGRect viewRect = [[UIScreen mainScreen] bounds];
     NSLog(@"Screen is %f tall and %f width", viewRect.size.height, viewRect.size.width);
+    
+    //We need a Window (it's like the Canvas for the painter)
     self.window = [[UIWindow alloc] initWithFrame:viewRect];
+    
+    // We need a ViewController (it's like the Paint brush for the painter)
+    UIViewController *colorTouchVC = [[UIViewController alloc] init];
+    
+    // We need a View
+    UIView *colorView = [[UIView alloc] initWithFrame:viewRect];
+    colorView.backgroundColor = [UIColor yellowColor];
+    colorTouchVC.view = colorView;
+    
+    //we ask the window to use this VC to draw the view
+    self.window.rootViewController = colorTouchVC;
+    // It should receive all keyboard and non-touch events
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
