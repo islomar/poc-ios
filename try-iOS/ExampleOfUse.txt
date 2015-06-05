@@ -1,0 +1,13 @@
+#import "IPhone.h"
+
+IPhone *talkingiPhone = [[IPhone alloc] init];
+talkingiPhone.phoneName = @"Mr. Higgie";
+[talkingiPhone decreaseBatteryLife:@5];
+
+if([talkingiPhone respondsToSelector:@selector(copyWithZone:)]){
+	IPhone *copy = [talkingiPhone copy];
+	[copy reportBatteryLife];
+}
+
+NSLog(@"The memory address for the original object is %p", talkingiPhone);
+NSLog(@"The memory address for the copied object is %p", copy);
